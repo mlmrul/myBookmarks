@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Bookmarks</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="readMe_container">
+        <div class="readMe">
+        <p>information</p>
+        <span>
+          <svg
+            width="10"
+            height="10"
+            viewBox="0 0 10 10"
+            style="margin-left: 5px"
+            filter: drop-shadow(2px 2px 2px lightgreen); >
+            <polygon points="5,0 10,10 0,10" fill="lightgreen" /></svg >
+      </span>
+    </div>
+        <div class="hidden_readMe">
+          <p>Hello, this is my first pet project in web development. The idea is simple: to create my own convenient and stylish browser start page with URL bookmark saving functionality. For this page, I used only HTML, CSS, and JavaScript, without frameworks, libraries, or style preprocessors. To save information between sessions, I decided to use localStorage. When creating a bookmark on the page, we will access this API, create or edit the "storageObjectOfMyApp" object (I added a function that outputs localStorage to the console when the site loads), and create the necessary number of bookmarks on the page based on this data. To create the background animation, I used an asynchronous function that calls itself with a delay, creates a column of numbers (randomly either 0 or 1), and deletes it with a delay as well. All the other 'magic' is done by CSS. Also, the page is adapted for different devices</p>
+        </div>
+      </div>
+      <div>
+        <h2>CREATE BOOKMARK</h2>
+        <span id="bookUrlFor"></span><br />
+        <input type="text" placeholder="url" id="bookUrl" />
+        <input type="text" placeholder="bookmark name" id="bookName" />
+        <button id="buttonCreateBookmark" class="_button">
+          create bookmark
+        </button>
+      </div>
+      <div>
+        <button id="buttonDeleteOll" class="_button">delete oll</button>
+      </div>
+    </header>
+    <main>
+      <div class="main_container" id="mainContainer">
+        <h1>BOOKMARKS</h1>
+        <ul id="bookList"></ul>
+      </div>
+    </main>
+    <div class="backgrownd" id="backgrownd"></div>
+
+    <script src="./code.js" type="module" defer></script>
+  </body>
+</html>

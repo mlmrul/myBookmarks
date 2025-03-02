@@ -1,0 +1,232 @@
+ul,
+li,
+a,
+div,
+h1,
+h2,
+h3,
+p {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+h1,
+h2,
+h3 {
+  text-align: center;
+  -webkit-text-stroke: 1px rgb(123, 255, 0);
+  color: transparent;
+  font-family: "Lilita One", serif;
+  font-weight: 400;
+
+  font-style: normal;
+
+  text-shadow: 0 0 8px rgb(60, 255, 0), 0 0 14px rgb(60, 255, 0),
+    0 0 20px rgb(60, 255, 0);
+  margin: 3rem 0;
+}
+a {
+}
+body {
+  color: white;
+  font-family: sans-serif;
+
+  width: 1400px;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  display: inline-flex;
+
+  justify-content: space-around;
+}
+.main_container {
+  width: 1400px;
+}
+#bookList {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.bookLi {
+  margin: 0 auto;
+
+  display: inline-flex;
+  width: 30%;
+  height: 3rem;
+
+  box-shadow: 5px 5px 4px 1px rgb(123, 255, 0);
+  transition-duration: 100ms;
+}
+.bookLi:hover {
+  box-shadow: 0px 5px 4px 0px rgb(255, 166, 0);
+  transform: scale(1.05);
+  background-color: rgb(5, 5, 5);
+}
+.bookLi a {
+  display: flex;
+  color: aliceblue;
+  text-decoration: none;
+  width: calc(100% - 2rem);
+}
+
+.bookLi a p {
+  width: 100%;
+
+  display: grid;
+  place-items: center;
+}
+.bookLi a img {
+  height: 100%;
+}
+.bookLi button {
+  height: 100%;
+  aspect-ratio: 1/1;
+
+  background-color: black;
+  -webkit-text-stroke: 1px rgb(250, 9, 9);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: transparent;
+}
+
+._button {
+  background-color: black;
+  color: aliceblue;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition-duration: 200ms;
+  box-shadow: none;
+  border: none;
+  border: 3px solid rgb(82, 255, 47);
+}
+
+._button:hover {
+  border: 3px solid greenyellow;
+  box-shadow: 0px 10px 50px rgb(255, 147, 47);
+}
+#buttonDeleteOll:hover {
+  box-shadow: 0px 10px 100px 100px rgb(255, 0, 0);
+}
+
+.backgrownd {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -99;
+  background-color: black;
+  perspective: 500px;
+}
+.matrix_drop {
+  position: fixed;
+  word-break: break-all;
+  width: 1rem;
+  text-shadow: 0 0 8px rgba(123, 255, 0, 0.5), 0 0 14px rgba(123, 255, 0, 0.5),
+    0 0 20px rgba(123, 255, 0, 0.5);
+  font-family: monospace;
+  font-size: 1rem;
+  -webkit-text-stroke: 1px rgba(123, 255, 0, 0.5);
+  color: transparent;
+  transform-style: preserve-3d;
+  animation: moveToMe 16s forwards;
+}
+.drop {
+  animation: droping 4s forwards;
+  opacity: 0;
+  transform-style: preserve-3d;
+}
+
+@keyframes droping {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes moveToMe {
+  0% {
+    transform: translateZ(0px);
+  }
+  100% {
+    transform: translateZ(500px);
+  }
+}
+
+input {
+  border: 3px solid rgb(106, 255, 47);
+  background-color: transparent;
+  color: white;
+  padding: 0.9rem;
+  border-radius: 1rem;
+  transition-duration: 200ms;
+}
+input:focus {
+  padding: 1rem;
+  border: 3px solid rgb(255, 141, 47);
+  outline: none;
+  box-shadow: none;
+  background-color: black;
+}
+input:hover {
+  background-color: black;
+}
+
+@media (max-width: 1400px) {
+  body {
+    width: 100%;
+  }
+  .main_container {
+    width: 100%;
+  }
+  .bookLi {
+    width: 45%;
+  }
+}
+@media (max-width: 800px) {
+  .bookLi {
+    width: 75%;
+  }
+}
+.readMe {
+  border: 3px solid rgb(82, 255, 47);
+  display: flex;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
+.readMe span {
+  transform: rotate(180deg);
+  transition-duration: 100ms;
+  transition-delay: 100ms;
+}
+.hidden_readMe {
+  position: absolute;
+  background-color: black;
+  color: white;
+  border: 3px solid rgb(82, 255, 47);
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+  opacity: 0;
+  transition-duration: 500ms;
+  transition-delay: 100ms;
+  max-width: 1000px;
+  font-size: 2rem;
+  z-index: -90;
+}
+.readMe:hover ~ .hidden_readMe {
+  opacity: 1;
+  z-index: 90;
+}
+.readMe:hover span {
+  transform: rotate(0deg);
+}
