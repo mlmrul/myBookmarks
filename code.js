@@ -7,9 +7,16 @@ const urlRegex = new RegExp(
 
 function renderBookmarks() {
   const getData = localStorage.getItem("storageObjectOfMyApp");
-  let parsData = getData ? JSON.parse(getData) : [];
-  parsData.sort((a, b) => {
-    a.url - b.url;
+ let parsNoSortData = getData ? JSON.parse(getData) : [];
+
+  let parsData = parsNoSortData.sort((a, b) => {
+    if (a.url < b.url) {
+      return -1;
+    }
+    if (a.url > b.url) {
+      return 1;
+    }
+    return 0;
   });
   bookList.innerHTML = "";
 
